@@ -1,0 +1,37 @@
+<div class="title">
+  <h1>List</h1>
+  <button type="button" (click)="newInfo()" class="btn btn-outline-primary">New</button>
+</div>
+<div class="row justify-content-center">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col-2">Email</th>
+            <th scope="col-4">Full Name</th>
+            <th scope="col-2">Address</th>
+            <th scope="col-auto">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-template *ngIf="items.length > 0; then hasrecord else norecord"></ng-template>
+          <ng-template #hasrecord>
+              <tr *ngFor="let rec of items">
+                <td>{{rec.user_email}}</td>
+                <td>{{rec.user_fullname}}</td>
+                <td>{{rec.user_address}}</td>
+                <td class="action">
+                  <button type="button" (click)="updateInfo(rec)" class="btn btn-default" aria-label="Left Align">
+                    <span class="bi bi-person-bounding-box" aria-hidden="true"></span>
+                  </button>
+                  <button type="button" (click)="deleteInfo(rec)"  class="btn btn-default" aria-label="Left Align">
+                    <span class="bi bi-x-circle" aria-hidden="true"></span>
+                  </button>
+                </td>
+              </tr>
+          </ng-template>
+          <ng-template #norecord>
+            <p class="alert">No Records found.</p>
+          </ng-template>
+        </tbody>
+      </table>
+</div>

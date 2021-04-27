@@ -1,0 +1,5 @@
+<div class="container">
+    <app-add *ngIf="type === 'Add'" [infoData]="info" (infoEvent)="setType($event)"></app-add>
+    <app-list *ngIf="type === 'List'" (infoEvent)="setType($event)"></app-list>
+</div>
+<router-outlet></router-outlet>

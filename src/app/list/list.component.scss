@@ -1,0 +1,17 @@
+table .action > button{
+    padding: 0px;
+}
+
+table .action:last-child > button {
+    margin-left: 4px;
+}
+
+.title {
+    position: relative;
+}
+
+.title .btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
