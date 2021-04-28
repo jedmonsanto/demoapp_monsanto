@@ -12,22 +12,22 @@ export class Services {
     constructor(private httpClient: HttpClient){}
     
     onGetItems(){
-      return this.httpClient.get<Array<ListItem>>('http://localhost:3001/users')
+      return this.httpClient.get<Array<ListItem>>('http://localhost:3000/users')
     }
 
     onGetItem(id:any){
-      return this.httpClient.get<ListItem>(`http://localhost:3001/users/${id}`);
+      return this.httpClient.get<ListItem>(`http://localhost:3000/users/${id}`);
     }
 
     onAdd(item: ListItem) {
-      return this.httpClient.post<ListItem>('http://localhost:3001/users', item);
+      return this.httpClient.post<ListItem>('http://localhost:3000/users', item);
     }
 
     onUpdate (item: ListItem) {
-      return this.httpClient.put(`http://localhost:3001/users/${item._id}`, item);
+      return this.httpClient.put(`http://localhost:3000/users/${item._id}`, item);
     }
 
     onDelete (item: ListItem) {      
-      return this.httpClient.delete(`http://localhost:3001/users/${item._id}`);
+      return this.httpClient.delete(`http://localhost:3000/users/${item._id}`);
     }
 }
